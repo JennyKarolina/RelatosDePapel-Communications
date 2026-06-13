@@ -9,11 +9,11 @@
         <version>4.0.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.unir.supplies</groupId>
+    <groupId>com.relatosdepapel.orders</groupId>
     <artifactId>communications</artifactId>
     <version>1.0.0</version>
-    <name>back-end-supplies-communications</name>
-    <description>Microservicio de comunicaciones para el sistema de suministros</description>
+    <name>back-end-relatosdepapel-communications</name>
+    <description>Microservicio de comunicaciones para ordenes</description>
     <properties>
         <java.version>25</java.version>
         <spring-cloud.version>2025.1.1</spring-cloud.version>
