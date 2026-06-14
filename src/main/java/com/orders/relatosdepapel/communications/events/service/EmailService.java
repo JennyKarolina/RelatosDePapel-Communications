@@ -1,7 +1,7 @@
 package com.orders.relatosdepapel.communications.events.service;
 
-import com.relatosdepapel.orders.communications.events.model.OrderCreatedEvent;
-import com.relatosdepapel.orders.communications.events.model.OrderItemEvent;
+import com.orders.relatosdepapel.communications.events.model.OrderCreatedEvent;
+import com.orders.relatosdepapel.communications.events.model.OrderItemEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
