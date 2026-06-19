@@ -35,8 +35,8 @@ eureka:
     service-url:
       defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
   instance:
-    preferIpAddress: true
-    hostname: orders
+    preferIpAddress: false
+    hostname: ${RAILWAY_PRIVATE_DOMAIN:localhost}
 
 ## RabbitMQ Event Configuration
 rabbitmq:
