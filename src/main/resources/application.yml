@@ -23,9 +23,9 @@ spring:
         transport:
           protocol: smtp
         smtp:
-          auth: false
+          auth: true
           starttls:
-            enable: false
+            enable: true
           ssl:
             trust: smtp.gmail.com
 
@@ -53,8 +53,8 @@ rabbitmq:
 # Configuración de notificaciones por correo
 email:
   notification:
-    to: ${NOTIFICATION_EMAIL:devner.99@gmail.com} # Cambia esto por el correo del destinatario
-    from: ${FROM_EMAIL:UNIR Relatos de Papel Ebook <devner.99@gmail.com>}
+    to: ${NOTIFICATION_EMAIL:bryan.cruz386.bsca@gmail.com} # Cambia esto por el correo del destinatario
+    from: ${FROM_EMAIL:UNIR Relatos de Papel Ebook <bryan.cruz386.bsca@gmail.com>}
 
 # Configuración de logging
 logging:
@@ -62,3 +62,9 @@ logging:
     com.orders.relatosdepapel.communications: DEBUG
     org.springframework.amqp: INFO
     org.springframework.mail: DEBUG
+
+# Configuración de Gemini API
+gemini:
+  api:
+    key: ${GEMINI_API_KEY:AIzaSyB6TnmJ3e-uZBaMlKpP1wiSVD5NTRTZNJQ}
+    url: ${GEMINI_API_URL:https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent}
