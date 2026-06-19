@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: ${PORT:8082}
 spring:
   application:
     name: orders-communications
@@ -66,5 +66,5 @@ logging:
 # Configuración de Gemini API
 gemini:
   api:
-    key: ${GEMINI_API_KEY:AIzaSyB6TnmJ3e-uZBaMlKpP1wiSVD5NTRTZNJQ}
+    key: ${GEMINI_API_KEY}
     url: ${GEMINI_API_URL:https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent}
