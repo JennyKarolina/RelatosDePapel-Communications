@@ -16,8 +16,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: devner.99@gmail.com
-    password: qgddxvsappgjstra
+    username: ${SENDER_MAIL_USERNAME:}
+    password: ${SENDER_MAIL_PASSWORD:}
     properties:
       mail:
         transport:
@@ -53,8 +53,7 @@ rabbitmq:
 # Configuración de notificaciones por correo
 email:
   notification:
-    to: ${NOTIFICATION_EMAIL:bryan.cruz386.bsca@gmail.com} # Cambia esto por el correo del destinatario
-    from: ${FROM_EMAIL:UNIR Relatos de Papel Ebook <bryan.cruz386.bsca@gmail.com>}
+    from: ${FROM_EMAIL:UNIR Relatos de Papel Ebook}
 
 # Configuración de logging
 logging:
