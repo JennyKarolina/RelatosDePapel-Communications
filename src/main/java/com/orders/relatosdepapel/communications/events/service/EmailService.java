@@ -20,16 +20,13 @@ public class EmailService {
 
     private final JavaMailSender mailSender;
 
-    @Value("${email.notification.to}")
-    private String defaultEmailTo;
-
     @Value("${email.notification.from}")
     private String emailFrom;
 
     public void sendOrderCreatedNotification(OrderCreatedEvent event) {
         try {
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setTo(defaultEmailTo);
+            message.setTo(event.getBody().getEmail());
             message.setFrom(emailFrom);
             message.setSubject("Nuevo Pedido Creado - " + event.getBody().getOrderName());
             message.setText(buildEmailContent(event));

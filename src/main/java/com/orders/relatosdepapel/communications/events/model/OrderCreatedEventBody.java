@@ -19,5 +19,6 @@ public class OrderCreatedEventBody {
     private BigDecimal total;
     private String status;
     private String ownerId;
+    private String email;
     private List<OrderItemEvent> orderItems;
 }

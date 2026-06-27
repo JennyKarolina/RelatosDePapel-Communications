@@ -2,6 +2,8 @@ package com.orders.relatosdepapel.communications.events.listener;
 
 import com.orders.relatosdepapel.communications.events.model.OrderCreatedEvent;
 import com.orders.relatosdepapel.communications.events.service.EmailService;
+import com.orders.relatosdepapel.communications.events.service.EmailServiceWithHtml;
+import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -12,17 +14,17 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class OrderEventListener {
 
-    private final EmailService emailService;
+    private final EmailServiceWithHtml emailService;
 
     @RabbitListener(queues = "${rabbitmq.queue.mails.order-created}")
-    public void handleOrderCreatedEvent(OrderCreatedEvent event) {
+    public void handleOrderCreatedEvent(OrderCreatedEvent event) throws MessagingException {
         try {
             log.info("Recibido evento de pedido creado: {} - EventId: {}",
                     event.getBody().getOrderName(),
                     event.getHeader().getEventId());
 
             // Enviar notificación por correo
-            emailService.sendOrderCreatedNotification(event);
+            emailService.sendOrderCreatedEmail(event);
 
             log.info("Evento procesado exitosamente para el pedido: {}",
                     event.getBody().getOrderName());
